@@ -1,0 +1,48 @@
+// {
+//     "name": "frontend-container",
+//     "dockerComposeFile": "../docker-compose.yml",
+//     "service": "frontend",
+//     "workspaceFolder": "/usr/src/app",
+//     "customizations": {
+//       "vscode": {
+//         "settings": {
+//           "terminal.integrated.shell.linux": "/bin/bash"
+//         },
+//         "extensions": [
+//           "dbaeumer.vscode-eslint",          // ESLint for JavaScript/TypeScript linting
+//           "esbenp.prettier-vscode",          // Prettier for code formatting
+//           "ms-azuretools.vscode-docker",     // Docker support
+//           "redhat.vscode-yaml",              // YAML support
+//           "eamodio.gitlens",                 // GitLens for Git integration
+//           "GregorBiswanger.json2ts",         // JSON to TypeScript converter
+//           "streetsidesoftware.code-spell-checker", // Spell Checker
+//           "Orta.vscode-jest",                // Jest support for testing
+//           "ms-vscode.vscode-typescript-next" // TypeScript support
+//         ]
+//       }
+//     }
+//   }
+  
+// typescriptの設定を消して修正したもの
+{
+  "name": "frontend-container",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "frontend",
+  "workspaceFolder": "/usr/src/app",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",          // ESLint
+        "esbenp.prettier-vscode",          // Prettier
+        "ms-azuretools.vscode-docker",     // Docker support
+        "redhat.vscode-yaml",              // YAML support
+        "eamodio.gitlens",                 // GitLens
+        "streetsidesoftware.code-spell-checker", // Spell Checker
+        "Orta.vscode-jest"                 // Jest support
+      ]
+    }
+  }
+}

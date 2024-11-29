@@ -1,0 +1,30 @@
+{
+    "name": "backend-container",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "backend",
+    "workspaceFolder": "/app",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "terminal.integrated.shell.linux": "/bin/bash"
+        },
+        "extensions": [
+          "ms-python.python",
+          "batisteo.vscode-django",
+          "humao.rest-client",
+          "dbaeumer.vscode-eslint",
+          "esbenp.prettier-vscode",
+          "ms-azuretools.vscode-docker",
+          "redhat.vscode-yaml",
+          "eamodio.gitlens",
+          "wholroyd.jinja",
+          "njpwerner.autodocstring",
+          "rangav.vscode-thunder-client",
+          "arjun.swagger-viewer",
+          "GregorBiswanger.json2ts",
+          "streetsidesoftware.code-spell-checker"
+        ]
+      }
+    }
+  }
+  

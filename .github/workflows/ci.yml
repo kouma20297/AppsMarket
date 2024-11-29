@@ -1,0 +1,53 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:13
+        env:
+          POSTGRES_DB: mydatabase
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
+        ports:
+          - 5432:5432
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install psycopg2  # PostgreSQL用ドライバ
+
+    - name: Run migrations
+      run: python manage.py migrate
+
+    - name: Run tests
+      run: python manage.py test
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Deploy to Heroku
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        HEROKU_APP_NAME: "your-heroku-app-name"
+      run: |
+        git remote add heroku https://git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
+        git push heroku main

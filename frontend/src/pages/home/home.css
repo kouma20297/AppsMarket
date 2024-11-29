@@ -1,0 +1,61 @@
+/* styles.css */
+
+/* 全体のスタイル */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+}
+
+/* セクションの共通スタイル */
+section {
+  padding: 40px 20px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* 赤色を統一 */
+.intro-text, .business-text {
+  color: #333;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #e63946; /* 赤色 */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #d62839; /* 少し濃い赤 */
+}
+
+/* 見出しスタイル */
+.section-title {
+  color: #e63946; /* 赤色 */
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.business-title {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.business-text {
+  color: #555;
+  font-size: 16px;
+  margin: 20px 0;
+}
